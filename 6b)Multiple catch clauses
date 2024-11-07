@@ -1,0 +1,15 @@
+import java.io.*;
+public class Multiple{
+    public static void main(String[]args){
+        try{
+            String s=null;
+            System.out.println(s);
+        }catch(ArithmeticException e){
+            System.out.println(e);
+        }
+        catch(NullPointerException e){
+            System.out.println(e);
+        }
+    }
+}
+null
