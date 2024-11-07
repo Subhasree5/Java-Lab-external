@@ -1,0 +1,36 @@
+import java.util.Scanner;
+abstract class Area{
+    int a,b;
+    abstract void triangle(int a,int b);
+    abstract void rectangle(int a,int b);
+}
+class Shapes extends Area{
+    void triangle(int a,int b){
+        this.a=a;
+        this.b=b;
+        double area=0.5*a*b;
+        System.out.println("Area of triangle= "+area);
+    }
+    void rectangle(int a,int b){
+        this.a=a;
+        this.b=b;
+        double area=a*b;
+        System.out.println("Area of rectangle= "+area);
+    }
+}
+public class Main{
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter a= ");
+        int a=sc.nextInt();
+        System.out.print("Enter b= ");
+        int b=sc.nextInt();
+        Shapes obj=new Shapes();
+        obj.triangle(a,b);
+        obj.rectangle(a,b);
+    }
+}
+Enter a= 2
+Enter b= 5
+Area of triangle= 5.0
+Area of rectangle= 10.0
