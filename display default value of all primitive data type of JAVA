@@ -1,0 +1,29 @@
+class DefaultValues{
+    static boolean defaultBoolean;
+    static char defaultChar;
+    static byte defaultByte;
+    static short defaultShort;
+    static int defaultInt;
+    static long defaultLong;
+    static float defaultFloat;
+    static double defaultDouble;
+    void display(){
+        System.out.println("Default values of primitive data types: ");
+        System.out.println("Boolean= "+defaultBoolean);
+        System.out.println("Char= "+defaultChar);
+        System.out.println("Byte= "+defaultByte);
+        System.out.println("Short= "+defaultShort);
+        System.out.println("Int= "+defaultInt);
+        System.out.println("Float= "+defaultFloat);
+        System.out.println("Double= "+defaultDouble);
+    }
+}
+public class Main{
+    public static void main(String[]args){
+        DefaultValues d=new DefaultValues();
+        d.display();
+    }
+}
+Default values of primitive data types: 
+Boolean= false
+Char= 
