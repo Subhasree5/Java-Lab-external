@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter the cofficent of X^2= ");
+        double a=sc.nextDouble();
+        System.out.print("Enter the cofficent of X= ");
+        double b=sc.nextDouble();
+        double D=b*b;
+        System.out.println("Discriminant= "+D);
+        if(D>0){
+            System.out.println("Roots are real and distinct");
+            double r1=(-b+Math.sqrt(D))/(2*a);
+            double r2=(-b-Math.sqrt(D))/(2*a);
+            System.out.println("Root1= "+r1);
+            System.out.println("Root2= "+r2);
+        }else{
+            System.out.println("Roots are real and equal");
+            double r=-b/(2*a);
+            System.out.println("Root1=Root2= "+r);
+        }
+    }
+}
+Enter the cofficent of X^2= 4
+Enter the cofficent of X= 0
+Discriminant= 0.0
+Roots are real and equal
+Root1=Root2= -0.0
+
+Enter the cofficent of X^2= 4
+Enter the cofficent of X= 2
+Discriminant= 4.0
+Roots are real and distinct
+Root1= 0.0
+Root2= -0.5
