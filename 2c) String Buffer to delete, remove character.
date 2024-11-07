@@ -1,0 +1,10 @@
+public class Main{
+    public static void main(String[]args){
+      StringBuffer sb=new StringBuffer("HellooWorld");
+      System.out.println("Original string= "+sb);
+      sb.delete(6,11);
+      System.out.println("After deleting= "+sb);
+      sb.deleteCharAt(5);
+      System.out.println("After removing character at index 0= "+sb);
+    }
+}
