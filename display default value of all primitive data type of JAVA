@@ -27,3 +27,9 @@ public class Main{
 Default values of primitive data types: 
 Boolean= false
 Char= 
+Byte= 0
+Short= 0
+Int= 0
+Float= 0.0
+Double= 0.0
+
