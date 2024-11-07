@@ -1,0 +1,36 @@
+class myThread extends Thread {
+    public void run() {
+        System.out.println("Thread started");
+        try {
+            Thread.sleep(2000); // Simulate work with 2-second sleep
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        System.out.println("Thread finished");
+    }
+}
+
+public class ThreadExample {
+    public static void main(String[] args) {
+        // Create and start the thread
+        myThread t1= new myThread();
+        t1.start();
+
+        // Check if the thread is alive
+        System.out.println("Is thread alive? " + t1.isAlive());
+
+        // Wait for the thread to finish
+        try {
+            t1.join();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        
+        System.out.println("Thread has completed");
+    }
+}
+Thread started
+Is thread alive? true
+Thread finished
+Thread has completed
+
