@@ -1,0 +1,27 @@
+class Student{
+    int id;
+    String name;
+    int age;
+    Student(int id,String name){
+        this.id=id;
+        this.name=name;
+    }
+    Student(int id,String name,int age){
+        this.id=id;
+        this.name=name;
+        this.age=age;
+    }
+    void display(){
+        System.out.println(id+" "+name+" "+age);
+    }
+}
+public class Main{
+    public static  void main(String[]args){
+        Student s1=new Student(111,"Karan");
+        Student s2=new Student(222,"Anil",20);
+        s1.display();
+        s2.display();
+    }
+}
+111 Karan 0
+222 Anil 20
