@@ -1,0 +1,43 @@
+class MorningThread extends Thread{
+    public void run(){
+        try{
+            System.out.println("Good Mornig");
+            Thread.sleep(1000);
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
+}
+class HelloThread extends Thread{
+    public void run(){
+        try{
+            System.out.println("Hello");
+            Thread.sleep(2000);
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
+}
+class WelcomeThread extends Thread{
+    public void run(){
+        try{
+            System.out.println("Welcome");
+            Thread.sleep(3000);
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
+}
+public class Main{
+    public static void main(String[]args){
+        MorningThread t1=new MorningThread();
+        HelloThread t2=new HelloThread();
+        WelcomeThread t3=new WelcomeThread();
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+}
+Good Mornig
+Welcome
+Hello
