@@ -1,43 +1,95 @@
-class MorningThread implements Runnable{
-    public void run(){
-        try{
-            System.out.println("Good Mornig");
-            Thread.sleep(1000);
-        }catch(Exception e){
+import java.util.Scanner;
+
+class Morning implements Runnable {
+    private volatile boolean running = true;
+
+    public void run() {
+        try {
+            while (running) {
+                System.out.println("Good Morning");
+                Thread.sleep(1000); // 1 second
+            }
+        } catch (Exception e) {
             System.out.println(e);
         }
     }
+
+    public void stop() {
+        running = false;
+    }
 }
-class HelloThread implements Runnable{
-    public void run(){
-        try{
-            System.out.println("Hello");
-            Thread.sleep(2000);
-        }catch(Exception e){
+
+class Hello implements Runnable {
+    private volatile boolean running = true;
+
+    public void run() {
+        try {
+            while (running) {
+                System.out.println("Hello");
+                Thread.sleep(2000); // 2 seconds
+            }
+        } catch (Exception e) {
             System.out.println(e);
         }
     }
+
+    public void stop() {
+        running = false;
+    }
 }
-class WelcomeThread implements Runnable{
-    public void run(){
-        try{
-            System.out.println("Welcome");
-            Thread.sleep(3000);
-        }catch(Exception e){
+
+class Welcome implements Runnable {
+    private volatile boolean running = true;
+
+    public void run() {
+        try {
+            while (running) {
+                System.out.println("Welcome");
+                Thread.sleep(3000); // 3 seconds
+            }
+        } catch (Exception e) {
             System.out.println(e);
         }
     }
+
+    public void stop() {
+        running = false;
+    }
 }
-public class Main{
-    public static void main(String[]args){
-        Thread t1=new Thread(new MorningThread());
-        Thread t2=new Thread(new HelloThread());
-        Thread t3=new Thread(new WelcomeThread());
-        t2.start();
+
+public class RunnableExample {
+    public static void main(String[] args) {
+        Thread t1 = new Thread(new Morning());
+        Thread t2 = new Thread(new Hello());
+        Thread t3 = new Thread(new Welcome());
+
         t1.start();
+        t2.start();
         t3.start();
+
+        // Wait for user input to stop the threads
+        System.out.println("Press Enter to stop the threads...");
+        new Scanner(System.in).nextLine();
+
+        // Stop the threads by setting running to false
+        t1.stop();
+        t2.stop();
+        t3.stop();
     }
 }
-Good Mornig
-Welcome
 Hello
+Good Morning
+Press Enter to stop the threads...
+Welcome
+Good Morning
+Hello
+Good Morning
+Welcome
+Good Morning
+Hello
+Good Morning
+Good Morning
+Hello
+Welcome
+Good Morning
+Good Morning
