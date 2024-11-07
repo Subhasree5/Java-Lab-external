@@ -1,0 +1,28 @@
+import java.util.Scanner;
+class Point{
+    int x;
+    int y;
+    Point(int x,int y){
+        this.x=x;
+        this.y=y;
+    }
+    void display(){
+      System.out.println("Print Co-Ordinates");
+      System.out.println("X= "+x+" Y= "+y);
+    }
+}
+public class Main{
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter X= ");
+        int x=sc.nextInt();
+        System.out.print("Enter Y= ");
+        int y=sc.nextInt();
+        Point p1=new Point(x,y);
+        p1.display();
+    }
+}
+Enter X= 5
+Enter Y= 9
+Print Co-Ordinates
+X= 5 Y= 9
